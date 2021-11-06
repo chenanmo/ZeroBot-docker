@@ -1,9 +1,11 @@
 #!/bin/sh
 #初始化容器脚本
+mkdir /zbp
 
 if [ -z $mirai_DIR ]; then
   mirai_DIR=/zbp
 fi
+
 
 if [ -z $MCL_URL ]; then
   MCL_URL=https://ghproxy.com/https://github.com/chenanmo/ZeroBot-Plugin.git
@@ -28,5 +30,7 @@ else
   cd /zbp&&git pull
   echo "更新完成"
 fi
-  echo "启动..."
-  cd $mirai_DIR&&./run.sh
+  echo "启动ZeroBot"
+  cd $mirai_DIR&&./run.sh &
+  echo "启动go-cqhttp"
+  cqhttp
