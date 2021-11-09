@@ -33,4 +33,4 @@ fi
   echo "启动ZeroBot"
   cd $mirai_DIR&&./run.sh &
   echo "启动go-cqhttp"
-  cqhttp
+  cd /data&&cqhttp
